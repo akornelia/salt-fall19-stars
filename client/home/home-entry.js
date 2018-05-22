@@ -11,3 +11,4 @@ const appendToDom =
 
 home.addGreetingTo('.greeting > h2');
 
+client.fetchQuote(appendToDom);

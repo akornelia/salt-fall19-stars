@@ -1,0 +1,51 @@
+{
+  "name": "basics",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "prerestart": "webpack --mode=development",
+    "restart": "NODE_ENV=development nodemon index.js",
+    "lint": "node ./node_modules/.bin/eslint *.js **/*.js",
+    "pretest": "npm run lint",
+    "test": "node ./node_modules/.bin/mocha --reporter spec --exit \"server/**/*.spec.js\" \"client/**/*.spec.js\"",
+    "prewatch": "npm run test",
+    "watch": "onchange '**/*.js' -- npm run test",
+    "selenium-setup": "./node_modules/.bin/selenium-standalone install",
+    "selenium": "./node_modules/.bin/selenium-standalone start",
+    "wdio-setup": "./node_modules/.bin/wdio config",
+    "e2e": "NODE_ENV=development ./node_modules/.bin/wdio wdio.conf.js",
+    "e2e-watch": "NODE_ENV=development ./node_modules/.bin/wdio wdio.conf.js --watch",
+    "clean": "rm ./server/public/javascript/*",
+    "webpack": "webpack",
+    "prerelease": "npm run clean",
+    "release": "webpack --mode=production",
+    "prestart-release": "npm run release",
+    "start-release": "NODE_ENV=production && npm run start"
+  },
+  "eslintConfig": {
+    "env": {
+      "node": true,
+      "browser": true
+    }
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-mocha": "^5.0.0",
+    "jsdom": "^11.10.0",
+    "mocha": "^5.1.0",
+    "nodemon": "^1.17.3",
+    "onchange": "^3.3.0",
+    "selenium-standalone": "^6.14.0",
+    "wdio-mocha-framework": "^0.5.13",
+    "wdio-selenium-standalone-service": "0.0.10",
+    "wdio-spec-reporter": "^0.1.4",
+    "webdriverio": "^4.12.0",
+    "webpack": "^4.8.2",
+    "webpack-cli": "^2.1.3"
+  },
+  "dependencies": {}
+}

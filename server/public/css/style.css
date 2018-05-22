@@ -3,3 +3,16 @@ button {
   outline: none;
 }
 
+.quote {
+  background-color: lightblue;
+  max-width: 600px;
+  position: absolute;
+  bottom: 10px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.quote > p {
+  text-align: right;
+  padding-right: 0.2em;
+}

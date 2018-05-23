@@ -45,7 +45,7 @@ describe('Players Client', () => {
   });
 
   it('should add player data to article', () => {
-    const expected = `<p>Name: ${playerEntity.name}</p><p>Gender: ${playerEntity.gender}</p><p>Team: ${playerEntity.team}</p><p>Bio: ${playerEntity.bio}</p>`;
+    const expected = `<p>Name: ${playerEntity.name}</p><p>Gender: ${playerEntity.gender}</p><p>Team: ${playerEntity.team}</p><p>Bio: ${playerEntity.bio}</p><div id="ratings-container"></div>`;
     const element = document.querySelector('#test');
     players.playerData(element, id, playerEntity);
 

@@ -1,11 +1,21 @@
 function addGreetingTo(selection) {
-  const url = new URL(document.location.href);
-  const name = url.searchParams.get('name');
+
+  const name = parseCookie(document.cookie);
 
   if (name) {
     const element = document.querySelector(selection);
-    element.innerHTML = `Welcome ${displayName(name)}!`;
+    element.innerHTML = `Welcome ${name}!`;
   }
+}
+
+function parseCookie(cookie) {
+  return cookie
+    .split(';')
+    .map(c => c.trim())
+    .filter(c => c.startsWith('auth.status'))
+    .map(kv => kv.split('=')[1])
+    .map(v => v.split(':')[1])
+    .map(n => displayName(n))[0];
 }
 
 function displayName(name) {

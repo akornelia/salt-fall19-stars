@@ -31,10 +31,10 @@ describe('The Authentication Service', () => {
 
   it('should reject invalid cookie header', () => {
     assert(!svc.isValidCookie('foo=bar; auth.status=bogus;baz=qox'));
-    assert(!svc.isValidCookie('foo=bar; auth.status=signedin; baz=qox'));
+    assert(!svc.isValidCookie('foo=bar; auth.status=signedin;baz=qox'));
   });
 
   it('should validate authorized cookie', () => {
-    assert(svc.isValidCookie('foo=bar; auth.status=signedin:joe; baz=qox'));
+    assert(svc.isValidCookie('foo=bar; auth.status=signedin:joe;baz=qox'));
   });
 });

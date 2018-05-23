@@ -69,17 +69,6 @@ describe('The Authentication Route', () => {
       req.end();
     });
 
-    it('should set "allow" header when method type is rejected', done => {
-      options.method = 'GET';
-
-      const req = http.request(options, res => {
-        assert.equal(res.headers['allow'], 'POST');
-        done();
-      });
-      req.write(body);
-      req.end();
-    });
-
     it('should set authorized cookie', done => {
 
       options.method = 'POST';

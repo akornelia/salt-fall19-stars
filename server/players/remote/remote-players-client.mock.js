@@ -23,5 +23,13 @@ function getPlayer(id, callback) {
   });
 }
 
+function getTeamFor(id, callback) {
+  console.log('MOCK', 'get team for', id);
+  callback({
+    name: 'bakerstreet',
+  });
+}
+
 module.exports.fetchAll = fetchAll;
 module.exports.getPlayer = getPlayer;
+module.exports.getTeamFor = getTeamFor;

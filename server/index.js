@@ -4,6 +4,7 @@ const view = require('./static');
 const notFound = require('./notFound');
 const auth = require('./auth');
 const login = require('./login');
+const players = require('./players');
 
 function all(req, res) {
   const path = url.parse(req.url).pathname;
@@ -28,8 +29,11 @@ function all(req, res) {
     case match(path, '/api/authenticate'):
       auth.route(req, res);
       break;
+    case match(path, /\/api\/players.?/):
+      players.route(req, res);
+      break;
     default:
-      view.route(req, res, () => notFound.route(req, res));
+      validateRequest(req, res, view.route, () => notFound.route(req, res));
   }
 }
 

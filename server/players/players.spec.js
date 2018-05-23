@@ -19,6 +19,7 @@ describe('The Players Resource', () => {
           name: 'joe',
           gender: 'male',
           team: 'Barcelona',
+          bio: 'lorem ipsum',
         } 
       ]});
 
@@ -84,6 +85,8 @@ describe('The Players Resource', () => {
     const player = {
       name: 'joe',
       gender: 'male',
+      team: 'Barcelona',
+      bio: 'lorem ipsum',
     };
 
     beforeEach(() => {

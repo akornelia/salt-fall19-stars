@@ -22,7 +22,12 @@ describe('The Players Service', () => {
       };
     }
 
-    service = require('./players-service').create(mockPlayerClient());
+    function mockBioClient() {
+      return {
+        getBioFor: (name, cb) => cb('lorem ipsum')
+      };
+    }
+    service = require('./players-service').create(mockPlayerClient(), mockBioClient());
   });
 
   it('should use remote client to get all players', done => {
@@ -52,6 +57,7 @@ describe('The Players Service', () => {
       name: 'joe',
       gender: 'male',
       team: 'Barcelona',
+      bio: 'lorem ipsum',
     };
     service.get(1, usr => {
       assert.deepEqual(expected, usr);

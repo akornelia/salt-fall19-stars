@@ -20,7 +20,11 @@ PlayersService.prototype.get = function(id, callback) {
 
   this.playersClient.getPlayer(id, data => {
     const person = parseDetails(data);
-    callback(person);
+
+    getTeam(this.playersClient, data.homeworld, team => {
+      person.team = team.name;
+      callback(person);
+    });
   });
 };
 
@@ -49,6 +53,10 @@ function pageNumber(p) {
     return p.split('=')[1];
   }
   else return;
+}
+
+function getTeam(playersClient, url, callback) {
+  playersClient.getTeamFor(url, callback);
 }
 
 module.exports.create = remotePlayersClient => new PlayersService(remotePlayersClient);

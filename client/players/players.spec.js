@@ -25,6 +25,7 @@ describe('Players Client', () => {
   const playerEntity = {
     name: 'joe',
     gender: 'male',
+    team: 'Barcelona',
   };
 
   beforeEach(() => {
@@ -43,7 +44,7 @@ describe('Players Client', () => {
   });
 
   it('should add player data to article', () => {
-    const expected = `<p>Name: ${playerEntity.name}</p><p>Gender: ${playerEntity.gender}</p>`;
+    const expected = `<p>Name: ${playerEntity.name}</p><p>Gender: ${playerEntity.gender}</p><p>Team: ${playerEntity.team}</p>`;
     const element = document.querySelector('#test');
     players.playerData(element, id, playerEntity);
 

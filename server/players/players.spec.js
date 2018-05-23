@@ -5,7 +5,7 @@ const players = require('./players');
 describe('The Players Resource', () => {
 
   const base = 'http://localhost';
-  const options = { address: base };
+  const options = { team: base };
 
   let server, route;
 
@@ -33,7 +33,7 @@ describe('The Players Resource', () => {
       server = http.createServer((req, res) => route.route(req, res));
       server.listen(0);
 
-      options.port = server.address().port;
+      options.port = server.team().port;
       options.method = 'GET';
       options.path = '/api/players';
     });
@@ -100,7 +100,7 @@ describe('The Players Resource', () => {
       server = http.createServer((req, res) => route.route(req, res));
       server.listen(0);
 
-      options.port = server.address().port;
+      options.port = server.team().port;
       options.method = 'GET';
       options.path = '/1';
     });

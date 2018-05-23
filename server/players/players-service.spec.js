@@ -2,14 +2,15 @@ const assert = require('assert');
 
 describe('The Players Service', () => {
 
-  const playerJoe = {name: 'joe', gender: 'male', url: 'http://foo.bar/3/',};
-  const playerJane = {name: 'jane', gender: 'female', url: 'http://baz.qox/4/',};
+  const playerJoe = {name: 'joe', gender: 'male', url: 'http://foo.bar/3/', homeworld: 'http://home.joe',};
+  const playerJane = {name: 'jane', gender: 'female', url: 'http://baz.qox/4/', homeworld: 'http://home.jane',};
   const allPlayersData = {
     count: 20,
     next: 'http://remote.api?page=4',
     prev: 'http://remote.api?page=2',
     results: [ playerJoe, playerJane ]
   }; 
+  const teamJoe = { name: 'Barcelona' };
   let service;
 
   before(() => {
@@ -17,6 +18,7 @@ describe('The Players Service', () => {
       return {
         fetchAll: cb => cb(allPlayersData),
         getPlayer: (id, cb) => cb(playerJoe),
+        getTeamFor: (url, cb) => cb(teamJoe)
       };
     }
 
@@ -49,6 +51,7 @@ describe('The Players Service', () => {
     const expected = {
       name: 'joe',
       gender: 'male',
+      team: 'Barcelona',
     };
     service.get(1, usr => {
       assert.deepEqual(expected, usr);

@@ -1,5 +1,6 @@
-function PlayersService(playersClient) {
+function PlayersService(playersClient, bioClient) {
   this.playersClient = playersClient;
+  this.bioClient = bioClient;
 }
 
 PlayersService.prototype.all = function(callback) {
@@ -23,7 +24,11 @@ PlayersService.prototype.get = function(id, callback) {
 
     getTeam(this.playersClient, data.homeworld, team => {
       person.team = team.name;
-      callback(person);
+
+      this.bioClient.getBioFor(person.name, bio => {
+        person.bio = bio;
+        callback(person);
+      });
     });
   });
 };
@@ -59,4 +64,5 @@ function getTeam(playersClient, url, callback) {
   playersClient.getTeamFor(url, callback);
 }
 
-module.exports.create = remotePlayersClient => new PlayersService(remotePlayersClient);
+module.exports.create = 
+  (remotePlayersClient, remoteBioClient) => new PlayersService(remotePlayersClient, remoteBioClient);

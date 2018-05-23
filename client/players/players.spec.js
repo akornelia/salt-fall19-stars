@@ -34,7 +34,7 @@ describe('Players Client', () => {
   });
 
   it('should list players', () => {
-    const expected = '<ul><li><button onclick="addplayerData(id1);">joe</button></li><li><button onclick="addplayerData(id2);">jane</button></li></ul>';
+    const expected = '<ul><li><button onclick="addPlayerData(id1);">joe</button></li><li><button onclick="addPlayerData(id2);">jane</button></li></ul>';
     const element = document.querySelector('#test');
 
     players.appendTo(element, playersList);

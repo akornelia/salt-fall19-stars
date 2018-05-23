@@ -1,21 +1,36 @@
 function appendTo(element, quote) {
-  console.log('Not Implemented!');
-  throw 'Not Implemented!';
-  // Hint: Append new HTML content to element.
+  element.innerHTML = asHtml(quote);
 }
 
 function playerData(element, id, data) {
-  console.log('Not Implemented!');
-  throw 'Not Implemented!';
-  // Hint: Append new HTML content to element.
-  // Hint: Add `#id=${id}` to browser history.
+  const elements = [];
+  elements.push(`<p>Name: ${data.name}</p>`);
+  elements.push(`<p>Gender: ${data.gender}</p>`);
+  element.innerHTML = elements.join('');
+  window.history.pushState(null, null, `#id=${id}`);
 }
 
 function ifIdExist(hash, callback) {
-  console.log('Not Implemented!');
-  throw 'Not Implemented!';
-  // Hint: Check weather there is any id in the hash.
-  // If you find any, use it with the callback function.
+  if (hash) {
+    const param = hash.slice(1)
+      .split(';')
+      .filter(p => p.startsWith('id='));
+    if (Array.isArray(param) && param.length > 0) {
+      const id = param[0].split('=')[1];
+      callback(id);
+    }  
+  } 
+}
+
+function asHtml(players) {
+  const elements = ['<ul>'];
+  players.results.forEach(u => elements.push(entry(u)));
+  elements.push('</ul>');
+  return elements.join('');
+}
+
+function entry(u) {
+  return `<li><button onclick='addPlayerData(${u.eid});'>${u.name}</button></li>`;
 }
 
 module.exports.appendTo = appendTo;

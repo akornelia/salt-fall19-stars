@@ -16,9 +16,10 @@ function fetchAll(callback) {
 
 function getPlayer(id, callback) {
   console.log('MOCK', 'get player', id);
+  const gender = id === '1' ? 'male' : 'female';
   callback({
     name: 'some player name',
-    gender: 'male',
+    gender: gender,
   });
 }
 

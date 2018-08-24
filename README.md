@@ -1,4 +1,4 @@
-# </salt>
+# &lt;/salt&gt;
 ## Project description 
 
 ### Motivation

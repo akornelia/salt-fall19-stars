@@ -12,7 +12,7 @@ If you inspect `package.json` you will see that we are setting an environment va
 However, the client side code is not running on the node server. Instead, we use a bundler (in this case webpack) to bundle all our assets that the client app needs. We create different bundles depending on weather the NODE_ENV variable is set to `development` or `production`.
 
 #### XHR
-You will be using XMLHTTPRequest (XHR) for the http requests against the API. XHR is a low level http client that has been around for a long time. However, it is not very easy to use and in the past, it used to behave different between browsers. That's the problem jQuery solved in the past. But today, XHR works quite well across all modern browsers. It's still cumbersome to use though. Nowdays, we often use `fetch` instead, but stick with XHR for this exercise! (You will be using fetch soon!!!)
+You will be using `XMLHTTPRequest` (XHR) for the http requests against the API. XHR is a low level http client that has been around for a long time. However, it is not very easy to use and in the past, it used to behave different between browsers. That's the problem jQuery solved in the past. But today, XHR works quite well across all modern browsers. It's still cumbersome to use though. Nowdays, we often use `fetch` instead, but stick with XHR for this exercise! (You will be using fetch soon!!!)
 
 Both [MDN](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest) and [W3C](https://www.w3schools.com/xml/xml_http.asp) has good XHR tutorials.
 

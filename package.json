@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js",
+    "start": "NODE_ENV=development node index.js",
     "prerestart": "webpack --mode=development",
     "restart": "NODE_ENV=development nodemon index.js",
     "lint": "node ./node_modules/.bin/eslint *.js **/*.js",

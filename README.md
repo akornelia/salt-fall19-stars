@@ -1,4 +1,4 @@
-# </salt>
+# &lt;/salt&gt;
 ## Day 1 
 Today we are going to explore our environment. Today's task is to 
 

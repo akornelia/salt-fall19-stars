@@ -22,7 +22,7 @@
     "prerelease": "npm run clean",
     "release": "webpack --mode=production",
     "prestart-release": "npm run release",
-    "start-release": "NODE_ENV=production && npm run start"
+    "start-release": "NODE_ENV=production npm run start"
   },
   "eslintConfig": {
     "env": {

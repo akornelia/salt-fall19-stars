@@ -4,7 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js",
+    "_start": "node index.js",
+    "start": "NODE_ENV=development npm run _start",
     "prerestart": "webpack --mode=development",
     "restart": "NODE_ENV=development nodemon index.js",
     "lint": "node ./node_modules/.bin/eslint *.js **/*.js",
@@ -18,11 +19,12 @@
     "e2e": "NODE_ENV=development ./node_modules/.bin/wdio wdio.conf.js",
     "e2e-watch": "NODE_ENV=development ./node_modules/.bin/wdio wdio.conf.js --watch",
     "clean": "rm ./server/public/javascript/*",
-    "webpack": "webpack",
-    "prerelease": "npm run clean",
-    "release": "webpack --mode=production",
-    "prestart-release": "npm run release",
-    "start-release": "NODE_ENV=production npm run start"
+    "predev-release": "npm run clean",
+    "dev-release": "webpack",
+    "preprod-release": "npm run clean",
+    "prod-release": "webpack --mode=production",
+    "prestart-production": "npm run prod-release",
+    "start-production": "NODE_ENV=production npm run _start"
   },
   "eslintConfig": {
     "env": {

@@ -1,78 +1,65 @@
 # </salt>
-## Project description 
+## Day 1 
+Today we are going to explore our environment. Today's task is to 
 
-### Motivation
-This is the first project you will work with in this course. 
-The purpose of this excersize is to take a deep breath and dive in - doing full stack development right from scratch!
-However, as this is your first encounter with the Javascript Node.js stack, it will pretty much be a _fill the gaps_ project.
+- check out this branch
+- create a new branch based on this branch named `day-1-NAME_OF_YOUR_MOB`
+- run the server and verify you can see the index page
+- run unit tests and verify that they are failing
+- run e2e tests and verify that they are failing
+- open Visual Studio Code and edit code until the failing unit test works
+- run both the unit test and the e2e test suites to verify the app is working
+- manually verify the app is working in a browser
 
-You will be using the latest Node.js stack teqniques to build a full stack application. 
-But(!) in this first project, we will use a minimal set of frameworks so that you will learn the fundamentals first.
-The upside of that is that you will
-  - become better programmers
-  - not depend on only one set of frameworks
-  - it will be easier and more fun to code as the course proceeds
+### Check out this branch
+`git clone git@github.com:saltsthlm/salt-stars.git && git checkout day-1`
 
-### Domain 
-This project is... yada yada yada (project domain description)
+### Create a new branch
+When `day-1` is the active branch, do `git checkout -b day-1-NAME_OF_YOUR_MOB`
 
+### Install any project dependencies
+`npm install`
 
-## Getting started
-### Initialize
-Run `npm install` in root folder.
+### Run the server
+`npm run start` or `npm run restart`
 
-### Eslint
-Javascript is a dynamic language. 
-This will give us a very productive environment with fast feedback cycles. 
-The downside of that is that we loose the compiler checks that would otherwise catch bugs for us.
-To work around that in Javascript, we use linters that check our code - both for style and erroneous code constructs.
+### Verify it is running
+Point your browser to <http://localhost:3000> 
 
-Run `npm run lint` to lint the code.
+### Run the unit test suite
+`npm run test` or `npm t`
 
-### Unit Tests
-We practice test driven development (TDD). 
-This means that we first write a failing test (red light), which acts as a specification for the feature we're about to implement.
-_Then_ we write the most basic implementation (nothing more!) that we can think of to make the test pass (green light).
+Watch the test suite fail.
 
-When the code passes our test, we know that we've solved the problem. But we are not done! 
-Now it's time to refactor the code with the passing test as our guide. 
-We remove any code duplications, and make the code better and more robust so that we can confidently say we've solved the problem with our best efforts.
+### Run the end to end test suite
+In your terminal, run `npm run start` to start the server.
 
-We often say that we go through a feedback cycle called `red - green - refactor`:
-  - Red: Write a failing test
-  - Green: Write the most basic solution to the test you can think of
-  - Refactor: Make the code production ready
+Open another terminal window and run `npm run selenium-setup`. (You only have to do this step once)
+Then start the Selenium server `npm run selenium`.
 
-This way of working serves several purposes
-  - When done right, it's a way easier to work this way as we're solving many trivial micro problems instead of a few complex problems
-  - We'll build up a test suite along with any new features that acts as a safety net as we develop our application
-  - We will enforce loose coupling and good design practices.
+Open yet another termianl window and run `npm run e2e`.
 
-Run `npm run test` to lint and run all tests once.
+Watch the test suite fail.
 
-Run `npm run watch` to continuously lint and run all tests as soon as we change the code.
+### Edit code
+Your task is to make the unit test pass by editing the production code. That means that you shall not touch the test files! That's the files with a `.spec.js` suffix.
 
-### Start the Server
-The development server is started by running `npm run start`. You can also run `npm run restart` if you want to hot reload the server on any file change.
+Open the project in Visual Studio Code like so `code .`. (Notice the dot)
 
-Point your browser to <http://localhost:3000> and go!
+Open another terminal window and run the unit test suite in watch mode `npm run watch`. This will trigger the suite to run automatically every time you save a JavaScript file!
 
-### End to End Tests
-End to end (e2e) test serves a different purpose than unit tests. 
-While unit tests focus on details and system design, e2e tests focus on the overall picture.
+Edit code until all unit tests pass. It doesn't matter if it looks good or not. Just make them pass!
 
-Typically there is a lot more ceremony around running e2e tests and the feedback loop is slower by magnitudes.
-They are also more brittle to change. But that doesn't mean we shouldn't do e2e tests - we're just not doing so many of them or running them at the same frequency.
+### Refactor
+When all unit tests are passing, it's time to refactor your solution. Refactor the code until you are satisfied with the result, constantly making sure all the unit tests are passing.
 
-The e2e test suite is using _Selenium_, which is a browser simulation environment. 
-Typically, it will load a web page info your browser and programmatically let you verify the content of that page.
+### Run the e2e suite again and make sure the app works
 
-Before you run Selenium the first time, you must run the install script like so `npm run selenium-setup`.
+### Verify the app works in the browser. 
+Open <http://localhost:3000> in your browser. The page should look just like before.
+Now, add a parameter `name` to the URL, like so `http://localhost:3000?name=YOUR_NAME`. Verify that your name pops up on the page.
 
-After that you start the Selenium server `npm run selenium-start`.
+Concratulations!!! You have just completed the first exercise :)
 
-Next step is to start your web server from another terminal. 
-Open a new terminal, navigate to this projects root directory and run `npm run start`.
-
-Now you are finally ready to run the test suite! 
-Open yet another terminal, navigate to this projects root directory and run `npm run e2e-test`.
+### Retrospective
+Collect your team members and reflect over what you just did. What did you learn today?

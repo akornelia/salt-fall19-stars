@@ -14,8 +14,13 @@ The upside of that is that you will
   - it will be easier and more fun to code as the course proceeds
 
 ### Domain 
-This project is... yada yada yada (project domain description)
+This porject is entirely created to be a start off this course and does not reflect any realistic product. The domain is rather scattered.
 
+Anyway, a finished app will have
+  - simple login and authentication
+  - a quotes generator
+  - a list of "players" (think sports team)
+  - a way to rate these players by giving them "stars"
 
 ## Getting started
 ### Initialize
@@ -69,10 +74,13 @@ Typically, it will load a web page info your browser and programmatically let yo
 
 Before you run Selenium the first time, you must run the install script like so `npm run selenium-setup`.
 
-After that you start the Selenium server `npm run selenium-start`.
+After that you start the Selenium server `npm run selenium`.
 
 Next step is to start your web server from another terminal. 
 Open a new terminal, navigate to this projects root directory and run `npm run start`.
 
 Now you are finally ready to run the test suite! 
 Open yet another terminal, navigate to this projects root directory and run `npm run e2e-test`.
+
+## Exercise
+Head over to the branch [day-1](https://github.com/saltsthlm/salt-stars/tree/day-1) for further instructions.

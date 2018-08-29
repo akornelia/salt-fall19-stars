@@ -24,4 +24,4 @@ But if Jane is logged in and rates R2/D2 with four stars, she should always see 
 Create an API for your ratings. One should not be authorized to rate any players without proper authentication.
 
 ### Ratings Widget
-Use this [widget](https://codepen.io/jaklec/pen/OZrVWb) to let users rate the players.
+Use [this widget](https://codepen.io/jaklec/pen/OZrVWb) to let users rate the players.

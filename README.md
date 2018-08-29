@@ -1,4 +1,4 @@
-# </salt>
+# &lt;/salt&gt;
 ## Day 3
 
 This is the day when you will add user authentication to the app. (Note that this authentication mechanism is _not safe for use in production!_)

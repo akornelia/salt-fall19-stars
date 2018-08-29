@@ -3,7 +3,7 @@
 
 ### SWAPI
 
-Play around with SWAPI using 
+Play around with [SWAPI](https://swapi.co/api/) using 
 
 - Your browser
 - Postman

@@ -12,4 +12,23 @@ function create(service) {
   };
 }
 
+function normalize(path) {
+  return url.parse(path)
+    .pathname
+    .replace(/\/+$/, '')
+    .replace('/api/players', '/');
+}
+
+function ok(res, data) {
+  res.statusCode = 200;
+  res.setHeader('content-type', 'application/json');
+  res.end(JSON.stringify(data));
+}
+
+function methodNotAllowed(res) {
+  res.statusCode = 405;
+  res.setHeader('Allow', 'GET');
+  res.end();
+}
+
 module.exports.create = create;

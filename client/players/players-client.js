@@ -1,7 +1,7 @@
 const config = require('./config');
 const host = window.location.protocol + '//' + window.location.hostname;
 const port = window.location.port;
-const base = port ? host + ':' + port : host; 
+const base = port ? host + ':' + port : host;
 
 /*
  * No tests attached!
@@ -24,12 +24,12 @@ const base = port ? host + ':' + port : host;
 
 function fetchPlayers(callback) {
   console.log('Not Implementedj!');
-  // Hint: Use XMLHttpRequest or fetch against our own players api.
+  // Hint: Use XMLHttpRequest or fetch (protip: use fetch) against our own players api. Extract the json message and send that back using the callback function.
 }
 
 function getPlayer(uri, callback) {
   console.log('Not Implementedj!');
-  // Hint: Use XMLHttpRequest or fetch against our own players api.
+  // Hint: Use XMLHttpRequest or fetch (protip: use fetch) against our own players api. Extract the json message and send that back using the callback function.
 }
 
 module.exports.fetchPlayers = fetchPlayers;

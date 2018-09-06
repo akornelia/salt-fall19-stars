@@ -48,6 +48,10 @@ A `GET` request against `/api/players/6` should result in a player object
 }
 ```
 
+You must
+1. implement the production http client code.
+2. make sure the production http client is used when running in production. Otherwise, the mocked version should be used.
+
 #### Bonus Exercise
 If you finish the exercise above and don't have anything to do, you may try to implement pagination on the roster page.
 Pagination is a bonus feature, so implement it in a separate branch based on your working branch.

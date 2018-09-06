@@ -20,6 +20,9 @@ The new html file in the project is meant to show all the players. But the clien
 
 Remember that you have to pack the client side JavaScript (create release) before running the app. 
 
+#### If you get stuck
+You may find some inspiration from [this branch](https://github.com/saltsthlm/salt-stars/tree/day-4-complete) with the complete solution. But don't just copy/paste. Make sure you understand how the code works before copying anything into your solution!
+
 #### Bonus Exercise
 If you finish the exercise above and don't have anything to do, you may try to implement pagination on the roster page.
 Pagination is a bonus feature, so implement it in a separate branch based on your working branch.

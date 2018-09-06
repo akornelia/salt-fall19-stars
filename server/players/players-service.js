@@ -25,6 +25,10 @@ function parsePerson(data) {
   };
 }
 
+function parseDetails(data) {
+  throw 'Not Implemented!';
+}
+
 function parseEid(url) {
   return url.replace(/\/$/, '')
     .split('/')

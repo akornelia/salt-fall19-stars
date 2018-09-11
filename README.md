@@ -17,7 +17,7 @@ And guess what? - Storing on the file system may even be sufficient for producti
 
 ### Ratings are personal.
 Two different users should only see their own ratings.
-If Joe is logged in and rates R2/D2 with two stars he should always see two the two stars associated with R2/D2. (Unless he changes his ratings for R2/D2)
+If Joe is logged in and rates R2/D2 with two stars he should always see the two stars associated with R2/D2. (Unless he changes his ratings for R2/D2)
 But if Jane is logged in and rates R2/D2 with four stars, she should always see her ratings of R2/D2 - no matter what Joe does!
 
 ### Ratings API

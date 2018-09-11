@@ -16,3 +16,6 @@ Play around with Wikipedia from your browser, Postman or curl to get a feel for 
 
 - What should happen if you don't get any result from Wikipedia?
 - Can you implement different query strings?
+
+### Configuration
+Remember to only use the mocked version when you are developing the service. The real requests against wikipedia should _only_ be used when running the server in production mode.

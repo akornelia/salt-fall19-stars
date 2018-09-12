@@ -25,3 +25,67 @@ Create an API for your ratings. One should not be authorized to rate any players
 
 ### Ratings Widget
 Use [this widget](https://codepen.io/jaklec/pen/OZrVWb) to let users rate the players.
+
+#### If you finish
+1. Make sure __everybody in your mob understands how the app works__. Make sure every body can run the app on their computer!
+2. Add images to the players. You may use some external API - or just download and save on disk.
+3. Take a mentors role and the other mobs.
+4. Work with the regular expressions lab.
+5. Do the bonus exercise to handle pagination in your API.
+6. Try to make your players/:id endpoint faster by running external requests in parallel. You may use this gatekeeper function.
+```javascript
+function inParallel(done) {
+  let result = [];
+  let pending = 0;
+
+  setTimeout(gatekeeper(null, 'one'), 200);
+  setTimeout(gatekeeper(null, 'two'), 100);
+
+  function gatekeeper(err, data) {
+    let order = pending;
+    pending++;
+    return () => {
+      pending--;
+
+      if (err) return done(err);
+
+      result[order] = data;
+
+      if (!pending) return done(null, result);
+    }
+  }
+}
+
+inParallel((err, result) => {
+  if (err) return console.log(err);
+
+  console.log(result);
+  // the results array will equal ['one','two'] even though
+  // the second function had a shorter timeout.
+});
+```
+
+Or you may use the `async` library to achieve the same thing. (It's _not_ a standard module!) 
+```javascript
+const async = require('async');
+async.parallel([
+  function(callback) {
+    setTimeout(function() {
+      callback(null, 'one');
+    }, 200);
+  },
+  function(callback) {
+      setTimeout(function() {
+      callback(null, 'two');
+    }, 100);
+  }
+],
+// optional callback
+function(err, results) {
+  if (err) return console.log(err);
+
+  console.log(result);
+  // the results array will equal ['one','two'] even though
+  // the second function had a shorter timeout.
+});
+```

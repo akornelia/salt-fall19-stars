@@ -16,19 +16,19 @@ describe('The Index Page', () => {
 
     it('should display headline', () => {
       browser.url(url);
-      const headline = browser.getHTML('body > h1', false);
+      const headline = browser.$('body > h1').getHTML(false);
       assert.equal(headline, 'Salt :: Fundamentals');
     });
 
     it('should greet anonymous visitor', () => {
       browser.url(url);
-      const greeting = browser.getHTML('section > h2', false);
+      const greeting = browser.$('section > h2').getHTML(false);
       assert.equal(greeting, 'Welcome!');
     });
 
     it('should load quote block', () => {
       browser.waitUntil(
-        () => browser.getHTML('.quote'),
+        () => browser.$('.quote').getHTML(),
         timeoutMillis,
         'expected quote'
       );
@@ -36,10 +36,9 @@ describe('The Index Page', () => {
   });
 
   describe('As a named user', () => {
-
     it('should greet named visitor', () => {
       browser.url(url + '?name=joe');
-      const greeting = browser.getHTML('section > h2', false);
+      const greeting = browser.$('section > h2').getHTML(false);
       assert.equal(greeting, 'Welcome Joe!');
     });
   });

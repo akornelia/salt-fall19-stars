@@ -1,3 +1,3 @@
 const home = require('./home');
 
-home.addGreetingTo('.greeting > h2');
+home.addGreetingTo('.greeting > h2')

@@ -1,5 +1,5 @@
-function addGreetingTo(selection) {
-  throw 'Not Implemented!';
+function addGreetingTo() {
+  throw new Error('Not Implemented!');
 }
 
 module.exports.addGreetingTo = addGreetingTo;

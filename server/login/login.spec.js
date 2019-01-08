@@ -13,7 +13,6 @@ describe('Login Route', () => {
   });
 
   describe('main', () => {
-    
     it('should redirect to public file', () => {
 
       const options = {

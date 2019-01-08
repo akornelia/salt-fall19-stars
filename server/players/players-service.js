@@ -6,7 +6,7 @@ PlayersService.prototype.all = function(callback) {
 
   this.playersClient.fetchAll(all => {
     // Hint: Parse result with parsePerson(data) and create a new response object (JSON). Use callback to return response object.
-    throw 'Not Implemented!';
+    throw new Error('Not Implemented!');
   });
 };
 
@@ -14,7 +14,7 @@ PlayersService.prototype.get = function(id, callback) {
 
   this.playersClient.getPlayer(id, data => {
     // Hint: Parse result (you have to create a new function, similar to parsePerson) and create response object. Use callback to return response object.
-    throw 'Not Implemented!';
+    throw new Error('Not Implemented!');
   });
 };
 
@@ -26,7 +26,7 @@ function parsePerson(data) {
 }
 
 function parseDetails(data) {
-  throw 'Not Implemented!';
+  throw new Error('Not Implemented!');
 }
 
 function parseEid(url) {

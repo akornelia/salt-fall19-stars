@@ -14,7 +14,7 @@
     "selenium": "selenium-standalone start",
     "wdio-setup": "wdio config",
     "e2e": "NODE_ENV=development wdio wdio.conf.js",
-    "clean": "rm ./server/public/javascript/*",
+    "clean": "rm ./server/public/javascript/* || true",
     "predev-release": "npm run test && npm run clean",
     "dev-release": "webpack --mode=development",
     "preprod-release": "npm run clean",

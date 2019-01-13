@@ -81,4 +81,4 @@ Now you are finally ready to run the test suite!
 Open yet another terminal, navigate to this projects root directory and run `npm run e2e-test`.
 
 ## Exercise
-Head over to the branch [day-1](https://github.com/saltsthlm/salt-jsfs-stars/tree/day-1) for further instructions.
+Head over to the branch day-1 for further instructions.

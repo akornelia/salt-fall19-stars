@@ -78,7 +78,7 @@ Next step is to start your web server from another terminal.
 Open a new terminal, navigate to this projects root directory and run `npm run start`.
 
 Now you are finally ready to run the test suite!
-Open yet another terminal, navigate to this projects root directory and run `npm run e2e-test`.
+Open yet another terminal, navigate to this projects root directory and run `npm run e2e`.
 
 ## Exercise
 Head over to the branch day-1 for further instructions.

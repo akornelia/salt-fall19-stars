@@ -32,7 +32,7 @@ This will give us a very productive environment with fast feedback cycles.
 The downside of that is that we loose the compiler checks that would otherwise catch bugs for us.
 To work around that in Javascript, we use linters that check our code - both for style and erroneous code constructs.
 
-Run `npm run lint` to lint the code.
+Run `npm run lint` to lint the code (there might not be any errors in this branch though!).
 
 ### Unit Tests
 We practice test driven development (TDD).
@@ -53,7 +53,7 @@ This way of working serves several purposes
   - We'll build up a test suite along with any new features that acts as a safety net as we develop our application
   - We will enforce loose coupling and good design practices.
 
-Run `npm run test` to lint and run all tests once.
+Run `npm run test` to run all tests once.
 
 ### Start the Server
 The development server is started by running `npm run start`. This will also lint the code and restart the server on any file change.

@@ -1,5 +1,5 @@
 function appendTo(element, quote) {
-  throw 'Not Implemented!';
+  throw new Error('Not Implemented!');
 }
 
 module.exports.appendTo = appendTo;

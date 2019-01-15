@@ -24,4 +24,4 @@ Code until the unit tests pass. Verify the app works by running the e2e test sui
 `npm run dev-release`
 
 ### Production release
-`npm run release`
+`npm run prod-release`

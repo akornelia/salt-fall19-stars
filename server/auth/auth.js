@@ -4,7 +4,7 @@ const create = authenticate => {
   return {
     route: (req, res) => {
       // Hints: HTTP method? HTTP header 'content-type'?
-      throw 'Not Implemented!';
+      throw new Error('Not Implemented!');
     }
   };
 };

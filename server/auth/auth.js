@@ -6,7 +6,7 @@ const create = authenticate => {
 
       switch (req.method) {
 
-        case 'POST': 
+        case 'POST':
           handlePost(req, res, authenticate);
           break;
 
@@ -60,7 +60,7 @@ function createCookie(body) {
   if (username) {
     return `auth.status=signedin:${username};path=/`;
   } else {
-    throw 'Failed to parse requrest';
+    throw new Error('Failed to parse requrest');
   }
 }
 

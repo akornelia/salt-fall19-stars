@@ -8,7 +8,7 @@ describe('The Index Page', () => {
 
   before(() => {
     browser.url(url);
-    browser.setCookie({name:'auth.status', value:'signedin:joe'});
+    browser.setCookies({name:'auth.status', value:'signedin:joe'});
   });
 
   beforeEach(() => {

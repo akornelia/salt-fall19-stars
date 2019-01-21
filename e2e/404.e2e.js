@@ -8,7 +8,7 @@ describe('Not Found', () => {
 
   before(() => {
     browser.url(host);
-    browser.setCookie({name:'auth.status', value:'signedin:joe'});
+    browser.setCookies({name:'auth.status', value:'signedin:joe'});
   });
 
   it('should load when resource not exist', () => {

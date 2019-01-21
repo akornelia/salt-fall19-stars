@@ -14,7 +14,7 @@ describe('Login page', () => {
     browser.url('http://localhost:3000/login.html');
     browser.$('input[type=text]').addValue('joe');
     browser.$('input[type=password]').addValue('invalid-password');
-    browser.click('#sign-in>button');
+    browser.$('#sign-in>button').click();
     browser.waitUntil(
       () => browser.getUrl() === 'http://localhost:3000/401.html',
       timeoutMillis,
@@ -26,7 +26,7 @@ describe('Login page', () => {
     browser.url('http://localhost:3000/login.html');
     browser.$('input[type=text]').addValue('joe');
     browser.$('input[type=password]').addValue('secret');
-    browser.click('#sign-in>button');
+    browser.$('#sign-in>button').click();
     browser.waitUntil(
       () => browser.getUrl() === 'http://localhost:3000/',
       timeoutMillis,

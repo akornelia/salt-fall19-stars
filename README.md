@@ -6,13 +6,13 @@ A user should have the possiblity to rate the players.
 ### Ratings should be persisted
 The ratings should be persisted.
 This means that if the server is shut down and then started again, the user should still see the same ratings.
-In a real application we would use a database. 
+In a real application we would use a database.
 But the operating system on your computer has a really great database called the file system. Make use of that!
 
 #### Sidenote
-_It's often better to abstract away the database and use the file system in the beginning of a project. 
+_It's often better to abstract away the database and use the file system in the beginning of a project.
 Using a database from the beginning puts more demands on infrastructure and it may be more difficult to back out of such decision.
-It will probaly also take longer to get the first version of your app up and ready for demo. 
+It will probaly also take longer to get the first version of your app up and ready for demo.
 And guess what? - Storing on the file system may even be sufficient for production in some scenarios!_
 
 ### Ratings are personal.
@@ -27,7 +27,7 @@ Create an API for your ratings. One should not be authorized to rate any players
 Use [this widget](https://codepen.io/jaklec/pen/OZrVWb) to let users rate the players.
 
 #### If you finish
-1. Make sure __everybody in your mob understands how the app works__. Make sure every body can run the app on their computer!
+1. Make sure __everybody in your mob understands how the app works__. Make sure everybody can run the app on their computer!
 2. Add images to the players. You may use some external API - or just download and save on disk.
 3. Take a mentors role and help the other mobs.
 4. Work with the regular expressions lab.

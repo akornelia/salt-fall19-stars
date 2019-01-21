@@ -8,7 +8,7 @@ describe('The Index Page', () => {
 
   before(() => {
     browser.url(url);
-    browser.setCookie({name:'auth.status', value:'signedin:joe'});
+    browser.setCookies({name:'auth.status', value:'signedin:joe'});
   });
 
   beforeEach(() => {
@@ -21,7 +21,7 @@ describe('The Index Page', () => {
   });
 
   it('should display headline', () => {
-    const headline = browser.$('body > h1', false).getHTML();
+    const headline = browser.$('body > h1').getHTML(false);
     assert.equal(headline, 'Salt :: Fundamentals');
   });
 
@@ -34,7 +34,7 @@ describe('The Index Page', () => {
   });
 
   it('should greet named visitor', () => {
-    const greeting = browser.$('section > h2', false).getHTML();
+    const greeting = browser.$('section > h2').getHTML(false);
     assert.equal(greeting, 'Welcome Joe!');
   });
 });

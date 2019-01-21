@@ -8,7 +8,7 @@ describe('The Players page', () => {
 
   before(() => {
     browser.url(url);
-    browser.setCookie({name:'auth.status', value:'signedin:joe'});
+    browser.setCookies({name:'auth.status', value:'signedin:joe'});
   });
 
   beforeEach(() => {
@@ -36,7 +36,7 @@ describe('The Players page', () => {
     );
 
     browser.waitUntil(
-      () => browser.click('#players-list > ul > li'),
+      () => browser.$('#players-list > ul > li').click(),
       timeoutMillis,
       'tried to open player details'
     );

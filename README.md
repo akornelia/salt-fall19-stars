@@ -3,7 +3,7 @@
 
 ### Data Aggregation
 Many businesses and applications of today are build upon aggregation of data from a variety of sources.
-It can be anything from enhancing the core business data with some third party service, e.g. currency conversions or weather forecasts, to pure aggregation services such as new aggregators.
+It can be anything from enhancing the core business data with some third party service, e.g. currency conversions or weather forecasts, to pure aggregation services such as news aggregators.
 
 #### Biography
 You will now add biography to each player. To do that you will fetch data for each player from __Wikipedia__ which you will _aggregate_ with the existing data from SWAPI.

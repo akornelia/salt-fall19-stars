@@ -12,24 +12,24 @@ describe('Login page', () => {
 
   it('should notify user on unsuccessful logins', () => {
     browser.url('http://localhost:3000/login.html');
-    browser.addValue('input[type=text]', 'joe');
-    browser.addValue('input[type=password]', 'invalid-password');
+    browser.$('input[type=text]').addValue('joe');
+    browser.$('input[type=password]').addValue('invalid-password');
     browser.click('#sign-in>button');
     browser.waitUntil(
-      () => browser.getUrl() === 'http://localhost:3000/401.html', 
-      timeoutMillis, 
+      () => browser.getUrl() === 'http://localhost:3000/401.html',
+      timeoutMillis,
       'expected 401 page'
     );
   });
 
   it('should load welcome page after successful authentication', () => {
     browser.url('http://localhost:3000/login.html');
-    browser.addValue('input[type=text]', 'joe');
-    browser.addValue('input[type=password]', 'secret');
+    browser.$('input[type=text]').addValue('joe');
+    browser.$('input[type=password]').addValue('secret');
     browser.click('#sign-in>button');
     browser.waitUntil(
-      () => browser.getUrl() === 'http://localhost:3000/', 
-      timeoutMillis, 
+      () => browser.getUrl() === 'http://localhost:3000/',
+      timeoutMillis,
       'expected index page'
     );
   });

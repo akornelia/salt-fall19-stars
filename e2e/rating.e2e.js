@@ -15,10 +15,10 @@ describe('The Players page', () => {
 
   it('should add rating to player', () => {
 
-    browser.click('#players-list > ul > li > button');
+    browser.$('#players-list > ul > li > button').click();
 
     browser.waitUntil(
-      () => browser.getHTML('#ratings-container> .rating'),
+      () => browser.$('#ratings-container> .rating').getHTML(),
       timeoutMillis,
       'expected player details'
     );

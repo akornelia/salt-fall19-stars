@@ -22,7 +22,7 @@ describe('The Players page', () => {
 
   it('should populate players list', () => {
     browser.waitUntil(
-      () => browser.getHTML('#players-list > ul'),
+      () => browser.$('#players-list > ul').getHTML(),
       timeoutMillis,
       'expected players list (empty or not)'
     );
@@ -30,7 +30,7 @@ describe('The Players page', () => {
 
   it('should open player details', () => {
     browser.waitUntil(
-      () => browser.getHTML('#players-list > ul > li'),
+      () => browser.$('#players-list > ul > li').getHTML(),
       timeoutMillis,
       'expected players list'
     );
@@ -42,7 +42,7 @@ describe('The Players page', () => {
     );
 
     browser.waitUntil(
-      () => browser.getHTML('#player > p'),
+      () => browser.$('#player > p').getHTML(),
       timeoutMillis,
       'expected player details'
     );

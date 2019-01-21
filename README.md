@@ -12,7 +12,7 @@ You will now add biography to each player. To do that you will fetch data for ea
 Fetching data from Wikipedia is fairly easy. As an example, you may use this url, `https://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&exintro=true&redirects=true&titles=Nirvana_(band)`, to fetch data about the rock band Nirvana.
 _Keep in mind that data from Wikipedia may be dirty or it may not even exist at all for the resource you are requesting._
 
-Play around with Wikipedia from your browser, Postman or curl to get a feel for how you can fetch the data you need from Wikipedia.
+Play around with Wikipedia from your browser, Postman or `curl` to get a feel for how you can fetch the data you need from Wikipedia.
 
 - What should happen if you don't get any result from Wikipedia?
 - Can you implement different query strings?

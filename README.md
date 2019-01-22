@@ -28,7 +28,7 @@ Use [this widget](https://codepen.io/jaklec/pen/OZrVWb) to let users rate the pl
 
 #### If you finish
 1. Make sure __everybody in your mob understands how the app works__. Make sure everybody can run the app on their computer!
+2. Do the bonus exercise to handle pagination in your API.
 2. Add images to the players. You may use some external API - or just download and save on disk.
 3. Take a mentors role and help the other mobs.
-4. Work with the regular expressions lab.
-5. Do the bonus exercise to handle pagination in your API.
+5. Work with the regular expressions lab.

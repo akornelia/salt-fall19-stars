@@ -19,8 +19,9 @@
     "dev-release": "webpack --mode=development",
     "preprod-release": "npm run clean",
     "prod-release": "webpack --mode=production",
-    "prestart-production": "npm run test && npm run prod-release",
-    "start-production": "NODE_ENV=production node index.js"
+    "prod-watch": "nodemon --ignore *bundle.js --exec 'webpack --mode=production'",
+    "prestart-production": "npm run test",
+    "start-production": "npm run prod-watch & NODE_ENV=production nodemon index.js"
   },
   "eslintConfig": {
     "env": {

@@ -95,7 +95,7 @@ describe('The Ratings Resource', () => {
   it('should respond with updated entity', (done) => {
     options.method = 'PUT';
     const req = http.request(options, res => {
-      const body = []; 
+      const body = [];
 
       res.on('data', chunk => {
         body.push(chunk);

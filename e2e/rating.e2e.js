@@ -18,7 +18,7 @@ describe('The Players page', () => {
     browser.$('#players-list > ul > li > button').click();
 
     browser.waitUntil(
-      () => browser.$('#ratings-container> .rating').getHTML(),
+      () => browser.$('#ratings-container > .rating').getHTML(),
       timeoutMillis,
       'expected player details'
     );

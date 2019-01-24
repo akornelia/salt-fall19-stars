@@ -13,6 +13,15 @@ const ratingsModule = (function() {
 
   const starEmitterClass = 'star-emitter';
 
+  Rating.prototype.init = function(){
+    window.addEventListener('click', event => {
+      if (event.target.classList.contains(starEmitterClass)) {
+        const id = event.target.parentNode.attributes['data-widget-id'].value;
+        this.rate(event.target, id);
+      }
+    });
+  };
+
   Rating.prototype.appendTo = function(selection, id) {
     const widget = document.createElement('div');
     widget.setAttribute('class', 'rating' );
@@ -38,11 +47,6 @@ const ratingsModule = (function() {
         <polygon points="9.9,1.1 3.3,21.78 19.8,8.58 0,8.58 16.5,21.78" />
       </svg>
     `;
-    window.addEventListener('click', event => {
-      if (event.target.classList.contains(starEmitterClass)) {
-        this.rate(event.target, id);
-      }
-    });
   };
 
   Rating.prototype.update = function(id, value) {
@@ -63,4 +67,8 @@ const ratingsModule = (function() {
   };
 })();
 
-module.exports.create = client => new ratingsModule.Rating(client);
+module.exports.create = (client) => {
+  const m = new ratingsModule.Rating(client);
+  m.init();
+  return m;
+};

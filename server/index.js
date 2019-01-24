@@ -13,6 +13,9 @@ function all(req, res) {
   console.log(req.method, path);
 
   switch (true) {
+    case match(path, /css$/):
+      view.route(req, res, () => notFound.route(req, res));
+      break;
     case match(path, '/'):
       validateRequest(req, res, home.route);
       break;

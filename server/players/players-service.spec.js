@@ -9,7 +9,7 @@ describe('The Players Service', () => {
     next: 'http://remote.api?page=4',
     prev: 'http://remote.api?page=2',
     results: [ playerJoe, playerJane ]
-  }; 
+  };
   const teamJoe = { name: 'Barcelona' };
   let service;
 
@@ -59,7 +59,7 @@ describe('The Players Service', () => {
       team: 'Barcelona',
       bio: 'lorem ipsum',
     };
-    service.get(1, usr => {
+    service.get(3, usr => {
       assert.deepEqual(expected, usr);
       done();
     });

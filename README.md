@@ -57,6 +57,7 @@ Edit code until all linting errors are gone, and all unit and e2e tests pass. It
 When all unit tests are passing, it's time to refactor your solution. Refactor the code until you are satisfied with the result, constantly making sure all the unit tests are passing.
 
 ### Run the e2e suite again and make sure the app works
+You will need to run `npm run dev-release` before the end-to-end tests will work.
 
 ### Verify the app works in the browser.
 Open <http://localhost:3000> in your browser. The page should look just like before.

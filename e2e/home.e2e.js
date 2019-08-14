@@ -2,11 +2,14 @@ const assert = require('assert');
 
 describe('The Index Page', () => {
 
-  const url = 'http://localhost:3000/';
-
-  describe('As any user', () => {
-
+  describe('As logged in user', () => {
+    const url = 'http://localhost:3000/';
     const timeoutMillis = 3000;
+
+    before(() => {
+      browser.url(url);
+      browser.setCookies({ name: 'auth.status', value: 'signedin:joe' });
+    });
 
     it('should set page title', () => {
       browser.url(url);
@@ -20,10 +23,10 @@ describe('The Index Page', () => {
       assert.equal(headline, 'Salt :: Fundamentals');
     });
 
-    it('should greet anonymous visitor', () => {
+    it('should greet visitor', () => {
       browser.url(url);
       const greeting = browser.$('section > h2').getHTML(false);
-      assert.equal(greeting, 'Welcome!');
+      assert.equal(greeting, 'Welcome Joe!');
     });
 
     it('should load quote block', () => {
@@ -32,14 +35,6 @@ describe('The Index Page', () => {
         timeoutMillis,
         'expected quote'
       );
-    });
-  });
-
-  describe('As a named user', () => {
-    it('should greet named visitor', () => {
-      browser.url(url + '?name=joe');
-      const greeting = browser.$('section > h2').getHTML(false);
-      assert.equal(greeting, 'Welcome Joe!');
     });
   });
 });

@@ -29,15 +29,13 @@ function all(req, res) {
       auth.route(req, res);
       break;
     default:
-      validateRequest(req, res, view.route, () => notFound.route(req, res));
+      view.route(req, res, () => notFound.route(req, res));
   }
 }
 
 function validateRequest(req, res, fn, cb) {
-  // Hint: Refactor this!
-  // Use the function auth.validCookie(some-header) to check weather the user is authenticated or not.
-  // If the user is not authenticated, redirect the response to the login page.
-  return fn(req, res, cb);
+  return auth.validCookie(req.headers['cookie']) ? 
+    fn(req, res, cb) : login.redirect(res);
 }
 
 function match(path, pattern) {

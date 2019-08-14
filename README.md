@@ -12,7 +12,7 @@ Today we are going to explore our environment. Today's task is to
 - manually verify the app is working in a browser
 
 ### Check out this branch
-`git clone git@github.com:saltsthlm/salt-stars-winter19.git && git checkout day-1`
+`git clone git@github.com:saltsthlm/salt-stars-fall19.git && git checkout day-1`
 
 ### Create a new branch
 When `day-1` is the active branch, do `git checkout -b day-1-NAME_OF_YOUR_MOB`
@@ -46,9 +46,9 @@ Watch the e2e test suite fail.
 ### Edit code (make it work)
 Your task is to make the tests pass by editing the production code. That means that you should NOT touch the test files (i.e the files with a `.spec.js` suffix)!
 
-Open the project in Visual Studio Code like so `code .`. (Notice the dot)
+Open the project in Visual Studio Code like so `code .`. (Notice the dot).
 
-Since you're already running `npm run start`, the server will automagically restart every time you save a Javascript file.
+Since you're already running `npm run start`, the server will automagically restart every time you save a Javascript file. If you edit a client JavaScript file the changes will be visible on page refresh.
 The linter will trigger on every save aswell.
 
 Edit code until all linting errors are gone, and all unit and e2e tests pass. It doesn't matter if it looks good or not. Just make it green!

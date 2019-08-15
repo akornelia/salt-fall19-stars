@@ -4,21 +4,17 @@ const port = window.location.port;
 const base = port ? host + ':' + port : host;
 
 function getRatingFor(id, callback) {
-  // Hint: If you are using fetch (which you should!) for the HTTP request, 
-  // then you must (well... should) use
-  //
-  //   options.credentials = 'same-origin'
-  //
-  // to include the auth-cookie with the request.
+  fetch(base + config.resource_path + '/' + id)
+    .then(res => res.json())
+    .then(json => callback(json));
 }
 
 function update(id, value, callback) {
-  // Hint: If you are using fetch (which you should!) for the HTTP request, 
-  // then you must (well... should) use
-  //
-  //   options.credentials = 'same-origin'
-  //
-  // to include the auth-cookie with the request.
+  const body = JSON.stringify({ rating: value });
+  const method = 'PUT';
+  fetch(base + config.resource_path + '/' + id, { method, body})
+    .then(res => res.json())
+    .then(() => callback());
 }
 
 module.exports.getRatingFor = getRatingFor;

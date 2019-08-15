@@ -5,6 +5,7 @@ const notFound = require('./notFound');
 const auth = require('./auth');
 const login = require('./login');
 const players = require('./players');
+const ratings = require('./ratings');
 
 function all(req, res) {
   const path = url.parse(req.url).pathname;
@@ -12,6 +13,9 @@ function all(req, res) {
   console.log(req.method, path);
 
   switch (true) {
+    case match(path, /css$/):
+      view.route(req, res, () => notFound.route(req, res));
+      break;
     case match(path, '/'):
       validateRequest(req, res, home.route);
       break;
@@ -32,19 +36,22 @@ function all(req, res) {
     case match(path, /\/api\/players.?/):
       players.route(req, res);
       break;
+    case match(path, /\/api\/ratings.?/):
+      ratings.route(req, res);
+      break;
     default:
       validateRequest(req, res, view.route, () => notFound.route(req, res));
   }
 }
 
 function validateRequest(req, res, fn, cb) {
-  return auth.validCookie(req.headers['cookie']) ? 
+  return auth.validCookie(req.headers['cookie']) ?
     fn(req, res, cb) : login.redirect(res);
 }
 
 function match(path, pattern) {
   const refinedPath = path === '/' ? path : path.replace(/\/+$/, '');
-  return pattern instanceof RegExp ? 
+  return pattern instanceof RegExp ?
     pattern.test(refinedPath) : refinedPath === pattern;
 }
 

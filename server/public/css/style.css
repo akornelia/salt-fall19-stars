@@ -46,3 +46,48 @@ button {
 #player {
   background-color: green;
 }
+
+
+:root {
+  --unstarred: #d8d8d8;
+  --starred: gold;
+}
+
+.rating {
+  curstor: pointer;
+}
+
+.star {
+  float: left;
+  transition: transform .1s;
+}
+
+.star > polygon {
+  fill: var(--starred);
+  fill-rule: nonzero;
+  pointer-events: none;
+}
+
+.star:hover {
+  transform: scale(1.3);
+  filter: brightness(0.96);
+}
+
+.rating[data-rating="1"] > .star:nth-child(1n+2) > polygon {
+    fill: var(--unstarred);
+}
+
+.rating[data-rating="2"] > .star:nth-child(1n+3) > polygon {
+    fill: var(--unstarred);
+}
+
+.rating[data-rating="3"] > .star:nth-child(1n+4) > polygon {
+    fill: var(--unstarred);
+}
+
+.rating[data-rating="4"] > .star:nth-child(1n+5) > polygon {
+    fill: var(--unstarred);
+}
+.rating[data-rating="5"] > .star > polygon {
+    fill: var(--starred);
+}

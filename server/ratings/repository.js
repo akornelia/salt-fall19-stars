@@ -1,14 +1,41 @@
 const fs = require('fs');
 
+const filePath = `${__dirname}/ratings.json`;
+
 function getRatingFor(key, callback) {
-  // Hint: Read file for key. File should contain json clob.
-  // Hint: Return empty result if file not exists. (But don't forget to log the event!)
+  const defaultRating = 3;
+
+  fs.readFile(filePath, 'utf8', (err, d) => {
+    if (err) {
+      return console.log(err);
+    }
+    const [user, id] = key.split(':');
+    const data = JSON.parse(d);
+    if (!(data && data[user] && data[user][id])) {
+      callback({rating: defaultRating});
+    } else {
+      callback(data[user][id]);
+    }
+  });
 }
 
 function update(key, value, callback) {
-  // Hint: Write the json value to file by key. (1 key === 1 file)
-  // Hint: Keep the files in a directory called 'db'. Create the directory if it doesn't exist.
-  // Hint: Log any errors that occurs while writing the file.
+  fs.readFile(filePath, 'utf8', (err, d) => {
+    if (err) {
+      return console.log(err);
+    }
+    const [user, id] = key.split(':');
+    const data = d ? JSON.parse(d) : {};
+    data[user] = data[user] ? data[user] : {};
+    data[user][id] = data[user][id] ? data[user][id] : {};
+    data[user][id] = value;
+    try {
+      fs.writeFileSync(filePath, JSON.stringify(data));
+    } catch (e) {
+      return console.log(err);
+    }
+    callback(data[user][id]);
+  });
 }
 
 module.exports.getRatingFor = getRatingFor;

@@ -4,10 +4,38 @@ function create(service) {
 
   return {
     route: (req, res) => {
-      // Hint: Split request into two subroutes depending on request path.
-      // Hint: Check HTTP method type on request. Only allow GET methods.
-      res.statusCode = 500;
-      res.end('Not Implemented!');
+
+      const path = normalize(req.url);
+
+      if (path === '/') {
+
+        switch(req.method) {
+
+          case 'GET':
+            service.all(data => ok(res, data));
+            break;
+
+          default:
+            methodNotAllowed(res);
+        }
+
+      } else {
+
+        const id = path
+          .slice(1)
+          .replace('/', '');
+
+        switch(req.method) {
+
+          case 'GET':
+            service.get(id, data => ok(res, data));
+            break;
+
+          default:
+            methodNotAllowed(res);
+        }
+      }
+
     }
   };
 }

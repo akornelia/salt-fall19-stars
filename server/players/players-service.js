@@ -5,16 +5,22 @@ function PlayersService(playersClient) {
 PlayersService.prototype.all = function(callback) {
 
   this.playersClient.fetchAll(all => {
-    // Hint: Parse result with parsePerson(data) and create a new response object (JSON). Use callback to return response object.
-    throw new Error('Not Implemented!');
+    const results = all.results.map(r => parsePerson(r));
+
+    callback({
+      count: all.count,
+      next: all.next ? all.next.split('=')[1] : null,
+      prev: pageNumber(all.prev),
+      results: results,
+    });
   });
 };
 
 PlayersService.prototype.get = function(id, callback) {
 
   this.playersClient.getPlayer(id, data => {
-    // Hint: Parse result (you have to create a new function, similar to parsePerson) and create response object. Use callback to return response object.
-    throw new Error('Not Implemented!');
+    const person = parseDetails(data);
+    callback(person);
   });
 };
 
@@ -26,7 +32,10 @@ function parsePerson(data) {
 }
 
 function parseDetails(data) {
-  throw new Error('Not Implemented!');
+  return {
+    name: data.name,
+    gender: data.gender,
+  };
 }
 
 function parseEid(url) {

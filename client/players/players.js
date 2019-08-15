@@ -1,25 +1,25 @@
 function appendTo(element, quote) {
-  console.log('Not Implemented!');
-  throw new Error('Not Implemented!');
-  // Hint: Append new HTML content to element.
+  element.innerHTML = asHtml(quote);
 }
 
 function playerData(element, id, data) {
   const elements = [];
   elements.push(`<p>Name: ${data.name}</p>`);
   elements.push(`<p>Gender: ${data.gender}</p>`);
-  console.log('Not Implemented!');
-  throw new Error('Not Implemented!');
-  // Hint: Append new HTML content to element.
-  // Hint: Add `#id=${id}` to browser history.
-  //       Use pushState(<stateobject>,<title>,<url>) from the window history api with stateobject and title set to null. (https://developer.mozilla.org/en-US/docs/Web/API/History_API)
+  element.innerHTML = elements.join('');
+  window.history.pushState(null, null, `#id=${id}`);
 }
 
 function ifIdExist(hash, callback) {
-  console.log('Not Implemented!');
-  throw new Error('Not Implemented!');
-  // Hint: Check weather there is any id in the hash, i.e. check that the hash exists.
-  // If you find any, use it with the callback function.
+  if (hash) {
+    const param = hash.slice(1)
+      .split(';')
+      .filter(p => p.startsWith('id='));
+    if (Array.isArray(param) && param.length > 0) {
+      const id = param[0].split('=')[1];
+      callback(id);
+    }  
+  } 
 }
 
 function asHtml(players) {

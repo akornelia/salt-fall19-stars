@@ -1,4 +1,5 @@
-// Hint: Require real implementation when running in production mode. Otherwise, use the mock!
-const playersHttpClient = require('./remote-players-client.mock');
+const playersHttpClient = process.env.NODE_ENV === 'production' ? 
+  require('./remote-players-client') :
+  require('./remote-players-client.mock');
 
 module.exports.playersHttpClient = playersHttpClient;

@@ -1,29 +1,26 @@
-// Not Implemented!
-//
-// Hint: This module should have the same interface as the mock module.
-// Hint: Use the 'people' endpoint in SWAPI (https://swapi.co/api/).
 const https = require('https');
 
-const base = '<url_to_swapi_api>';
+const base = 'https://swapi.co/api/';
 
 function fetchAll(callback) {
-  // Hint: Use the get(path, callback) function below with path to fetch all from SWAPI
+  get(base + 'people/', callback);
 }
 
 function getPlayer(id, callback) {
-  // Hint: Use the get(path, callback) function below with path to fetch by id from SWAPI
+  get(base + 'people/' + id + '/', callback);
 }
 
 function get(path, callback) {
 
   https.get(path, res => {
+    let data = '';
 
     res.on('data', chunk => {
-     	throw 'Not Implemented!';
+      data += chunk;
     });
 
     res.on('end', () => {
-    	throw 'Not Implemented!';
+      callback(JSON.parse(data));
     });
   });
 }

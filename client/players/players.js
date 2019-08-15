@@ -7,6 +7,7 @@ function playerData(element, id, data) {
   elements.push(`<p>Name: ${data.name}</p>`);
   elements.push(`<p>Gender: ${data.gender}</p>`);
   elements.push(`<p>Team: ${data.team}</p>`);
+  elements.push(`<p>Bio: ${data.bio}</p>`);
   element.innerHTML = elements.join('');
   window.history.pushState(null, null, `#id=${id}`);
 }

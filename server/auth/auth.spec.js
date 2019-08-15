@@ -23,7 +23,7 @@ describe('The Authentication Route', () => {
       route = auth.create((password, cb) => {
         cb(isAuthenticated);
       }).route;
-      
+
       server = http.createServer((req, res) => route(req, res));
       server.listen(0);
 
@@ -33,7 +33,7 @@ describe('The Authentication Route', () => {
     it('should respond with redirect when req authenticates', done => {
 
       options.method = 'POST';
-      options.headers = { 'content-type': formUrlEncoded }; 
+      options.headers = { 'content-type': formUrlEncoded };
 
       const req = http.request(options, res => {
         assert.equal(res.statusCode, 302);
@@ -47,7 +47,7 @@ describe('The Authentication Route', () => {
     it('should reject wrong content type', done => {
 
       options.method = 'POST';
-      options.headers = { 'content-type': 'application/json' }; 
+      options.headers = { 'content-type': 'application/json' };
 
       const req = http.request(options, res => {
         assert.equal(res.statusCode, 415);
@@ -72,14 +72,14 @@ describe('The Authentication Route', () => {
     it('should set authorized cookie', done => {
 
       options.method = 'POST';
-      options.headers = { 'content-type': formUrlEncoded }; 
+      options.headers = { 'content-type': formUrlEncoded };
 
       const req = http.request(options, res => {
         const cookie = res.headers['set-cookie'];
         assert.equal('auth.status=signedin:joe;path=/', cookie);
         done();
       });
-      
+
       req.write(body);
       req.end();
     });
@@ -93,17 +93,17 @@ describe('The Authentication Route', () => {
       const route = auth.create((password, cb) => {
         cb(isAuthenticated);
       }).route;
-      
+
       server = http.createServer((req, res) => route(req, res));
       server.listen(0);
-     
+
       options.port = server.address().port;
     });
 
-    it('should redirect to 405 page when unauthorized', done => {
+    it('should redirect to 401 page when unauthorized', done => {
 
       options.method = 'POST';
-      options.headers = { 'content-type': formUrlEncoded }; 
+      options.headers = { 'content-type': formUrlEncoded };
 
       http.request(options, res => {
         assert.equal(res.statusCode, 302);
@@ -115,7 +115,7 @@ describe('The Authentication Route', () => {
     it('should not set cookie when unauthorized', done => {
 
       options.method = 'POST';
-      options.headers = { 'content-type': formUrlEncoded }; 
+      options.headers = { 'content-type': formUrlEncoded };
 
       http.request(options, res => {
         const cookie = res.headers['set-cookie'];

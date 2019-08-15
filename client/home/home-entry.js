@@ -1,7 +1,6 @@
 const home = require('./home');
 const quotes = require('./quotes');
 
-
 const client = process.env.NODE_ENV === 'production' ? 
   require('./quotes-client') :
   require('./quotes-client.mock');

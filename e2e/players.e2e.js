@@ -35,7 +35,7 @@ describe('The Players page', () => {
       'expected players list'
     );
 
-    browser.$('#players-list > ul > li').click(),
+    browser.$('#players-list > ul > li > button:first-child').click();
 
     browser.waitUntil(
       () => browser.$('#player > p').getHTML(),

@@ -1,8 +1,7 @@
 function fetchQuote(callback) {
   console.log('using fake quotes');
   callback({
-    content: 'This is a quote.',
-    title: 'Unknown'
+    quote: 'This is a fake quote.'
   });
 }
 

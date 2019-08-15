@@ -35,11 +35,7 @@ describe('The Players page', () => {
       'expected players list'
     );
 
-    browser.waitUntil(
-      () => browser.$('#players-list > ul > li').click(),
-      timeoutMillis,
-      'tried to open player details'
-    );
+    browser.$('#players-list > ul > li > button:first-child').click();
 
     browser.waitUntil(
       () => browser.$('#player > p').getHTML(),

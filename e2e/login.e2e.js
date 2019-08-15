@@ -13,7 +13,7 @@ describe('Login page', () => {
   it('should notify user on unsuccessful logins', () => {
     browser.url('http://localhost:3000/login.html');
     browser.$('input[type=text]').addValue('joe');
-    browser.$('input[type=password]').addValue('inval-password');
+    browser.$('input[type=password]').addValue('invalid-password');
     browser.$('#sign-in>button').click();
     browser.waitUntil(
       () => browser.getUrl() === 'http://localhost:3000/401.html',

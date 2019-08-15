@@ -1,5 +1,5 @@
 function fetchQuote(callback) {
-  const uri = 'https://kanye.rest/';
+  const uri = 'https://api.kanye.rest/';
 
   const xhr = new XMLHttpRequest();
   throw 'Not Implemented!';

@@ -5,12 +5,9 @@ const quotes = require('./quotes');
 const { JSDOM } = jsdom;
 
 describe('Random Quotes', () => {
-
   let document;
-
   const quote = {
-    content: 'lorem ipsum dolor',
-    title: 'joe'
+    quote: 'lorem ipsum dolor'
   };
 
   beforeEach(() => {
@@ -19,7 +16,7 @@ describe('Random Quotes', () => {
   });
 
   it('should append quote to selection', () => {
-    const expected = '<div class="quote"><blockquote>lorem ipsum dolor</blockquote><p>- joe</p></div>';
+    const expected = '<div class="quote"><blockquote>lorem ipsum dolor</blockquote>/div>';
     const element = document.querySelector('#test');
 
     quotes.appendTo(element, quote);

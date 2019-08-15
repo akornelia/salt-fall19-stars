@@ -1,5 +1,5 @@
 function fetchQuote(callback) {
-  const uri = 'http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1';
+  const uri = 'https://kanye.rest/';
 
   const xhr = new XMLHttpRequest();
   throw 'Not Implemented!';

@@ -1,9 +1,9 @@
 # &lt;/salt&gt;
 ## Day 2
 Today you will be implementing a qoutes engine on the page. Fortunately, you don't have to write it by yourselves ;)
-Instead you will use a third party API that you will find here <https://quotesondesign.com/api-v4-0/>.
+Instead you will use a third party API that you will find here <https://kanye.rest/>.
 
-### Quotes On Design
+### Kanye West Quotes
 #### Config
 The API is free to use for our purposes. However, we don't want to hammer the API while we're developing against it. __Therefore we will mock the API calls in development environment and only use the real stuff when we are in "production".__
 

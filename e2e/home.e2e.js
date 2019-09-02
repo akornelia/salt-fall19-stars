@@ -27,4 +27,10 @@ describe('The Index Page', () => {
     const greeting = browser.$('section > h2').getHTML(false);
     assert.equal(greeting, 'Welcome Joe!');
   });
+
+  it('Should remove the number from the name', () => {
+    browser.url(url + '?name=joe5');
+    const greeting = browser.$('section > h2').getHTML(false);
+    assert.equal(greeting, 'Welcome Joe!');
+  });
 });

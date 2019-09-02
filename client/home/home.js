@@ -6,6 +6,7 @@ function addGreetingTo() {
 }
 
 //working
+
 /* const userName = window.location.href.split("=").slice(-1)[0];
 if(userName === '' || userName === window.location.href){
   //document.querySelector('.greeting > h2').innerHTML;

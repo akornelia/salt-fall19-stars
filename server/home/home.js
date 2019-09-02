@@ -1,4 +1,4 @@
-const fs = require("fs");
+const fs = require('fs');
 
 const welcome = fs.readFileSync('./server/public/index.html');
 

@@ -30,9 +30,9 @@ describe('The Home Page', () => {
   });
 
   it('should parse string excluding numbers', () => {
-    fetchDom('/?name=123');
+    fetchDom('/?name=123Joe567890');
     home.addGreetingTo('.greeting > h2');
     const element = document.querySelector('.greeting > h2');
-    assert.equal('Welcome!', element.innerHTML);
+    assert.equal('Welcome Joe!', element.innerHTML);
   });
 });

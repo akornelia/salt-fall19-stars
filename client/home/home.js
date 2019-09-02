@@ -1,15 +1,10 @@
 function addGreetingTo(selector) {
-  //throw new Error('Not Implemented!');
-
   const element = document.querySelector(selector);
   const name = window.location.search.replace('?name=','');
-  let output;
-
-  if (name) {
-    output = 'Welcome ' + name.charAt(0).toUpperCase() + name.substring(1, name.length) + '!';
-  } else {
-    output = 'Welcome!';
-  }
+  
+  const output = name 
+    ? 'Welcome ' + name.charAt(0).toUpperCase() + name.substring(1, name.length) + '!'
+    : 'Welcome!' ;
 
   element.innerHTML = output;
 }

@@ -12,7 +12,11 @@ Today we are going to explore our environment. Today's task is to
 - manually verify the app is working in a browser
 
 ### Check out this branch
-`git clone git@github.com:saltsthlm/salt-stars-fall19.git && git checkout day-1`
+```bash
+git clone git@github.com:saltsthlm/salt-stars-fall19.git 
+cd salt-stars-fall19
+git checkout day-1
+```
 
 ### Create a new branch
 When `day-1` is the active branch, do `git checkout -b day-1-NAME_OF_YOUR_MOB`

@@ -28,4 +28,11 @@ describe('The Home Page', () => {
     const element = document.querySelector('.greeting > h2');
     assert.equal('Welcome!', element.innerHTML);
   });
+
+  it('should parse string excluding numbers', () => {
+    fetchDom('/?name=123');
+    home.addGreetingTo('.greeting > h2');
+    const element = document.querySelector('.greeting > h2');
+    assert.equal('Welcome!', element.innerHTML);
+  });
 });

@@ -6,10 +6,11 @@ function addGreetingTo(target) {
   name ? (name = name.replace(/[0-9]/g, '')) : null;
 
   //If name still is not empty print it to the page
-  if (name) {
-    targetName.textContent =
-      'Welcome ' + name.charAt(0).toUpperCase() + name.slice(1) + '!';
-  }
+  name
+    ? (targetName.textContent = `Welcome ${name
+      .charAt(0)
+      .toUpperCase()}${name.slice(1)}!`)
+    : null;
 }
 
 module.exports.addGreetingTo = addGreetingTo;

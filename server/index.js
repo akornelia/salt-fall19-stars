@@ -21,9 +21,10 @@ function all(req, res) {
 }
 
 function match(path, pattern) {
-   const refinedPath = path === '/' ? path : path.replace(/\/+$/, '');
-  return pattern instanceof RegExp ?
-    pattern.test(refinedPath) : refinedPath === pattern;
+  const refinedPath = path === '/' ? path : path.replace(/\/+$/, '');
+  return pattern instanceof RegExp
+    ? pattern.test(refinedPath)
+    : refinedPath === pattern;
 }
 
 module.exports.all = all;

@@ -1,4 +1,4 @@
-const fs = require("fs");
+const fs = require('fs');
 
 const welcome = fs.readFileSync('./server/public/index.html');
 
@@ -7,7 +7,7 @@ module.exports.route = (req, res) => {
   res.end(welcome);
 };
 
-module.exports.redirect = (res) => {
+module.exports.redirect = res => {
   res.writeHead(302, { Location: '/' });
   res.end();
 };
